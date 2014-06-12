@@ -1,3 +1,25 @@
 # https://git-scm.com/docs/gitignore
 # https://help.github.com/articles/ignoring-files
 # Example .gitignore files: https://github.com/github/gitignore
+
+*.vim
+*.swp
+*.vcproj
+*.sln
+*.ncb
+*.suo
+*.user
+
+*.*~
+*.tmp
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.tags
+tags
+Icon?
+ehthumbs.db
+Thumbs.db
+

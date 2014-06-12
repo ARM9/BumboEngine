@@ -1,0 +1,13 @@
+
+body {
+  background-color: #282828;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
