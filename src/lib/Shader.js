@@ -1,6 +1,9 @@
 
 var Shader = function()
 {
+	// public
+	this.vsAttributes = new Array();
+	// todo: protected
 	this.m_Program = gl.createProgram();
 	this.m_Shaders = new Array();
 }
@@ -52,5 +55,9 @@ Shader.prototype = {
 			gl.deleteShader(this.m_Shaders[i]);
 		}
 		delete this.m_Shaders;
+	},
+
+	getAttribLocation: function(name){
+		gl.getAttribLocation(this.m_Program, name);
 	}
 };
