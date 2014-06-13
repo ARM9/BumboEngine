@@ -1,4 +1,7 @@
 
+/*
+	Todo: bind attrib locations
+*/
 var Triangle = function()
 {
 	this.vertices = [
@@ -21,6 +24,10 @@ Triangle.prototype = {
 	constructor: Triangle,
 
 	render: function(){
-
+		gl.bindBuffer(gl.ARRAY_BUFFER, this.m_VerticesVbo);
+		gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
+		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.m_IndicesVbo);
+		gl.vertexAttribPointer(0, 1, gl.UNSIGNED_BYTE, false, 0, 0);
+		gl.drawElements(gl.TRIANGLES, this.indices.length, gl.UNSIGNED_BYTE, 0);
 	}
 };

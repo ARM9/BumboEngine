@@ -9,8 +9,8 @@ function initWebGL(canvas, width, height)
 		canvas.width = width;
 		canvas.height = height;
 
-		gl.viewportWidth = canvas.width;
-		gl.viewportHeight = canvas.height;
+		gl.contextWidth = canvas.width;
+		gl.contextHeight = canvas.height;
 
 		canvas.addEventListener("webglcontextlost", function(event) {event.preventDefault();}, false);
 		canvas.addEventListener("webglcontextrestored", main, false);
