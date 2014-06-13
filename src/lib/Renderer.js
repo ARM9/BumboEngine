@@ -8,7 +8,8 @@ var Renderer = function(canvas, width, height)
 	initWebGL(canvas, width, height);
 
 	//gl.enable(gl.DEPTH_TEST);
-	gl.enable(gl.CULL_FACE);
+	//gl.depthFunc(gl.LEQUAL);
+	//gl.enable(gl.CULL_FACE);
 
 	var vs = '\
 attribute vec3 aVertexPosition;\n\
