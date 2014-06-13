@@ -29,9 +29,12 @@ void main()\n\
 	this.m_FlatShader = new Shader();
 	this.m_FlatShader.load(gl.VERTEX_SHADER, vs);
 	this.m_FlatShader.load(gl.FRAGMENT_SHADER, fs);
-	this.m_FlatShader.link();
 
-	this.vsattr = gl.getAttribLocation(this.m_FlatShader.m_Program, 'aVertexPosition');
+	this.vsattr = 0;
+	gl.bindAttribLocation(this.m_FlatShader.m_Program, this.vsattr, 'aVertexPosition');
+	//this.vsattr = gl.getAttribLocation(this.m_FlatShader.m_Program, 'aVertexPosition');
+
+	this.m_FlatShader.link();
 
 };
 
