@@ -26,7 +26,7 @@ Shader.prototype = {
 
 	link: function(){
 		if(this.m_Shaders.length === 0){
-			console.error('Error: no compiled shaders found for program.');
+			console.error("Error: no compiled shaders found for program.");
 			return null;
 		}
 

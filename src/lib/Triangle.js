@@ -2,23 +2,23 @@
 var Triangle = function(pos)
 {
 	this.vertices = [
-		0.0+pos, 1.0, 0.5,
-		-1.0+pos, -1.0, 0.5,
-		1.0+pos, -1.0, 0.5];
+		0.0+pos, 1.0, 1.0,
+		-1.0+pos, -1.0, 1.0,
+		1.0+pos, -1.0, 1.0];
 
 	this.indices = [0, 1, 2];
 
 	this.m_VerticesVbo = gl.createBuffer();
-	gl.bindBuffer(gl.ARRAY_BUFFER, this.m_VerticesVbo)
+	gl.bindBuffer(gl.ARRAY_BUFFER, this.m_VerticesVbo);
 	gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.vertices), gl.STATIC_DRAW);
 
 	this.m_IndicesVbo = gl.createBuffer();
 	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.m_IndicesVbo);
 	gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indices), gl.STATIC_DRAW);
 
-	gl.bindBuffer(gl.ARRAY_BUFFER, gl.NULL);
-	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.NULL);
-}
+	gl.bindBuffer(gl.ARRAY_BUFFER, null);
+	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
+};
 
 Triangle.prototype = {
 	constructor: Triangle,

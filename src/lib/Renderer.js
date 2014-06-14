@@ -11,27 +11,27 @@ var Renderer = function(canvas, width, height)
 	//gl.depthFunc(gl.LEQUAL);
 	//gl.enable(gl.CULL_FACE);
 
-	var vs = '\
+	var vs = "\
 attribute vec3 aVertexPosition;\n\
 varying vec3 vVertexPosition;\n\
 void main()\n\
 {\n\
 	vVertexPosition = aVertexPosition;\n\
 	gl_Position = vec4(aVertexPosition, 1.0);\n\
-}';
-	var fs = '\
+}";
+	var fs = "\
 precision mediump float;\n\
 varying vec3 vVertexPosition;\n\
 void main()\n\
 {\n\
-	gl_FragColor = vec4(vVertexPosition, 1.0);\n\
-}';
+	gl_FragColor = vec4(vVertexPosition, 0.5);\n\
+}";
 	this.m_FlatShader = new Shader();
 	this.m_FlatShader.load(gl.VERTEX_SHADER, vs);
 	this.m_FlatShader.load(gl.FRAGMENT_SHADER, fs);
 
 	this.vsattr = 0;
-	gl.bindAttribLocation(this.m_FlatShader.m_Program, this.vsattr, 'aVertexPosition');
+	gl.bindAttribLocation(this.m_FlatShader.m_Program, this.vsattr, "aVertexPosition");
 	//this.vsattr = gl.getAttribLocation(this.m_FlatShader.m_Program, 'aVertexPosition');
 
 	this.m_FlatShader.link();
