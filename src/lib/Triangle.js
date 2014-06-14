@@ -14,7 +14,7 @@ var Triangle = function(pos)
 
 	this.m_IndicesVbo = gl.createBuffer();
 	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.m_IndicesVbo);
-	gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(this.indices), gl.STATIC_DRAW);
+	gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(this.indices), gl.STATIC_DRAW);
 
 	gl.bindBuffer(gl.ARRAY_BUFFER, gl.NULL);
 	gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, gl.NULL);
@@ -31,6 +31,6 @@ Triangle.prototype = {
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.m_VerticesVbo);
 		gl.vertexAttribPointer(0, 3, gl.FLOAT, false, 0, 0);
 		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.m_IndicesVbo);
-		gl.drawElements(gl.TRIANGLES, this.indices.length, gl.UNSIGNED_BYTE, 0);
+		gl.drawElements(gl.TRIANGLES, this.indices.length, gl.UNSIGNED_SHORT, 0);
 	}
 };
