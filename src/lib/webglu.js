@@ -1,7 +1,6 @@
 var gl;
 
-function initWebGL(canvas, width, height)
-{
+function initWebGL(canvas, width, height){
 	"use strict";
 	try{
 		var contextAttributes = {

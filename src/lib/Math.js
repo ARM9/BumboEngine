@@ -1,8 +1,7 @@
 
 /* Ugh, just use glm */
 
-var Vector3 = function(x, y, z)
-{
+var Vector3 = function(x, y, z){
 	this.x = x || 0;
 	this.y = y || 0;
 	this.z = z || 0;
@@ -71,8 +70,7 @@ Vector3.prototype = {
 	}
 };
 
-var Vector2 = function(x, y)
-{
+var Vector2 = function(x, y){
 	this.x = x || 0;
 	this.y = y || 0;
 };
@@ -129,8 +127,7 @@ Vector2.prototype = {
 	}
 }
 
-var Matrix3 = function()
-{
+var Matrix3 = function(){
 	this.elements = new Float32Array(9);
 	var t = this.elements;
 	t[0] = 1; t[3] = 0; t[6] = 0;

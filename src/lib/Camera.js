@@ -1,6 +1,5 @@
 
-var Camera = function()
-{
+var Camera = function(){
 
 }
 

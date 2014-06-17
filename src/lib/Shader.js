@@ -1,12 +1,12 @@
 
-var Shader = function()
-{
+var Shader = function(){
 	// public
-	this.vsAttributes = new Array();
+	this.vsAttributes = [];
+
 	// todo: protected
 	this.m_Program = gl.createProgram();
-	this.m_Shaders = new Array();
-}
+	this.m_Shaders = [];
+};
 
 Shader.prototype = {
 	constructor: Shader,
@@ -18,7 +18,6 @@ Shader.prototype = {
 
 		if(!gl.getShaderParameter(shaderName, gl.COMPILE_STATUS)){
 			throw new Error(gl.getShaderInfoLog(shaderName));
-			return null;
 		}
 
 		this.m_Shaders.push(shaderName);
@@ -27,7 +26,7 @@ Shader.prototype = {
 	link: function(){
 		if(this.m_Shaders.length === 0){
 			console.error("Error: no compiled shaders found for program.");
-			return null;
+			return false;
 		}
 
 		for(var i = 0; i < this.m_Shaders.length; i++){
@@ -40,7 +39,6 @@ Shader.prototype = {
 
 		if(!gl.getProgramParameter(this.m_Program, gl.LINK_STATUS)){
 			throw new Error(gl.getProgramInfoLog(this.m_Program));
-			return null;
 		}
 		return true;
 	},
@@ -54,7 +52,6 @@ Shader.prototype = {
 			gl.detachShader(this.m_Program, this.m_Shaders[i]);
 			gl.deleteShader(this.m_Shaders[i]);
 		}
-		delete this.m_Shaders;
 	},
 
 	getAttribLocation: function(name){

@@ -4,8 +4,7 @@ var dat3d = function () {
 };
 
 var myScreen, myScene;
-function main()
-{
+function main(){
 	dat3d._debug = true;
 	var canvas = document.getElementById("mainCanvas");
 	canvas.style.backgroundColor = "#3f94c9";
@@ -14,17 +13,21 @@ function main()
 
 	myScene = new Scene();
 
+	myScene.addChild(new Triangle(-0.5));
+	myScene.addChild(new Triangle(0.5));
+	myScene.addChild(new Triangle(0.0));
+
 	myCam = new Camera();
 
 	bar = new Matrix3();
 	run();
 }
 
-function run()
-{
+function run(){
 	requestAnimationFrame(run);
 	myScreen.render(myScene);
 }
+
 (function(){
 	"use strict";
 	main();

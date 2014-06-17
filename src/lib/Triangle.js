@@ -1,6 +1,5 @@
 
-var Triangle = function(pos)
-{
+var Triangle = function(pos){
 	this.vertices = [
 		0.0+pos, 1.0, 1.0,
 		-1.0+pos, -1.0, 1.0,

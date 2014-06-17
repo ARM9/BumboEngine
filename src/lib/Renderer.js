@@ -1,6 +1,5 @@
 
-var Renderer = function(canvas, width, height)
-{
+var Renderer = function(canvas, width, height){
 	// size of canvas element
 	canvas.style.width = width + 'px';
 	canvas.style.height = height + 'px';
