@@ -2,14 +2,14 @@
 build/
 
 *.vim
-*.swp
 *.vcproj
 *.sln
 *.ncb
 *.suo
 *.user
 
-*.*~
+*~
+*.swp
 *.tmp
 .DS_Store
 .DS_Store?

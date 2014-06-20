@@ -1,5 +1,5 @@
 
-Keys = {
+Key = {
 	pressed: {},
 
 	LEFT: 37,
@@ -8,15 +8,15 @@ Keys = {
 	DOWN: 40,
 
 	isDown: function(keyCode){
-		return Keys.pressed[keyCode];
+		return Key.pressed[keyCode];
 	},
 
 	onKeyDown: function(event){
-		Keys.pressed[event.keyCode] = true;
+		Key.pressed[event.keyCode] = true;
 	},
 
 	onKeyUp: function(event){
-		Keys.pressed[event.keyCode] = false;
+		Key.pressed[event.keyCode] = false;
 	}
 };
 
