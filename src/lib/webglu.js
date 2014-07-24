@@ -11,7 +11,7 @@ function initWebGL(canvas, width, height){
 			premultipliedAlpha: true,
 			preserveDrawingBuffer: false
 		};
-		if(dat3d._debug){
+		if(DEBUG){
 			gl = WebGLDebugUtils.makeDebugContext(canvas.getContext("experimental-webgl"), contextAttributes);
 		}else{
 			gl = canvas.getContext("experimental-webgl", contextAttributes);

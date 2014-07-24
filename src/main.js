@@ -1,11 +1,16 @@
+var DEBUG = true;
 
-var dat3d = function () {
-	this._debug = false;
-};
+var g_stats;
 
-var myScreen, myScene;
+var myCamera, myScreen, myScene;
 function main(){
-	dat3d._debug = true;
+	g_stats = new Stats();
+	g_stats.setMode(0);
+	g_stats.domElement.style.position = 'absolute';
+	g_stats.domElement.style.left = '0px';
+	g_stats.domElement.style.top = '0px';
+	document.body.appendChild(g_stats.domElement);
+	
 	var canvas = document.getElementById("mainCanvas");
 	canvas.style.backgroundColor = "#3f94c9";
 
@@ -17,18 +22,17 @@ function main(){
 	myScene.addChild(new Triangle(0.5));
 	myScene.addChild(new Triangle(0.0));
 
-	myCam = new Camera();
+	myCamera = new Camera();
 
-	bar = new Matrix3();
 	run();
 }
 
 function run(){
 	requestAnimationFrame(run);
 	myScreen.render(myScene);
+	g_stats.update();
 }
 
 (function(){
-	"use strict";
 	main();
 }());

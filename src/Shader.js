@@ -34,7 +34,7 @@ Shader.prototype = {
 		}
 
 		gl.linkProgram(this.m_Program);
-		if(!dat3d._debug)
+		if(DEBUG)
 			this.deleteShaders();
 
 		if(!gl.getProgramParameter(this.m_Program, gl.LINK_STATUS)){
