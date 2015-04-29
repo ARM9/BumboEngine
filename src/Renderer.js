@@ -6,9 +6,9 @@ var Renderer = function(canvas, width, height){
 
 	initWebGL(canvas, width, height);
 
-	//gl.enable(gl.DEPTH_TEST);
-	//gl.depthFunc(gl.LEQUAL);
-	//gl.enable(gl.CULL_FACE);
+    gl.enable(gl.DEPTH_TEST);
+    gl.depthFunc(gl.LEQUAL);
+    gl.enable(gl.CULL_FACE);
 
 	var vs = "\
 attribute vec3 aVertexPosition;\n\
@@ -31,14 +31,22 @@ void main()\n\
 
 	this.vsattr = 0;
 	gl.bindAttribLocation(this.m_FlatShader.m_Program, this.vsattr, "aVertexPosition");
-	//this.vsattr = gl.getAttribLocation(this.m_FlatShader.m_Program, 'aVertexPosition');
 
 	this.m_FlatShader.link();
 
+	gl.clearColor(0.25, 0.5, 0.72, 1.0);
 };
 
 Renderer.prototype = {
 	constructor: Renderer,
+
+    setClearColor: function(r, g, b, a){
+	    gl.clearColor(r, g, b, a);
+    },
+
+    clear: function(){
+		gl.clear(gl.COLOR_BUFFER_BIT);
+    },
 
 	render: function(scene){
 		gl.viewport(0, 0, gl.contextWidth, gl.contextHeight);
