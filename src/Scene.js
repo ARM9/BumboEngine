@@ -13,7 +13,12 @@ Scene.prototype = {
 
 	addChild: function(child){
 		this.m_Nodes.push(child);
-        this.m_vertices.push.apply(this.m_vertices, child.vertices);
+
+        //this.m_vertices.push.apply(this.m_vertices, child.vertices);
+        for(var i = 0; i < child.vertices.length; i++){
+            this.m_vertices.push(child.vertices[i]);
+        }
+
         this.m_nindices += child.vertices.length / this.m_VerticesVbo.itemSize;
 
         gl.bindBuffer(gl.ARRAY_BUFFER, this.m_VerticesVbo);

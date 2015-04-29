@@ -45,7 +45,7 @@ Renderer.prototype = {
     },
 
     clear: function(){
-		gl.clear(gl.COLOR_BUFFER_BIT);
+		gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     },
 
 	render: function(scene){
