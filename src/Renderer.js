@@ -11,12 +11,12 @@ var Renderer = function(canvas, width, height){
     gl.enable(gl.CULL_FACE);
 
 	var vs = "\
-attribute vec3 aVertexPosition;\n\
+attribute vec4 aVertexPosition;\n\
 varying vec3 vVertexPosition;\n\
 void main()\n\
 {\n\
-	vVertexPosition = aVertexPosition;\n\
-	gl_Position = vec4(aVertexPosition, 1.0);\n\
+	vVertexPosition = aVertexPosition.xyz;\n\
+	gl_Position = aVertexPosition;\n\
 }";
 	var fs = "\
 precision mediump float;\n\
